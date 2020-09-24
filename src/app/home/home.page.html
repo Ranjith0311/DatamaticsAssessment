@@ -1,20 +1,257 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar >
+    <ion-title color="primary" style="font-size:25px">
+      <ion-icon color="primary" name="library-outline"></ion-icon>
+      <ion-label><b> DATAMATICS</b></ion-label>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+ <ion-row style="height: 100%;">
+        <ion-col size="2" class="sideMenu" >
+           
+         <ion-content>
+          <ion-searchbar animated mode="ios" (search)="applyFilter($event)"></ion-searchbar>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header> 
+                <ion-icon name="briefcase-outline"></ion-icon>
+                <ion-label class="ion-margin-start">Job title</ion-label>
+              </mat-expansion-panel-header>
+              <mat-panel-description class="ion-no-padding">
+                <ion-list>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox ></ion-checkbox><ion-label style="padding-left:6px">All</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Manger and above</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Director and above</ion-label>
+                  </ion-row> 
+                </ion-list>
+          
+              </mat-panel-description>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header> 
+                <ion-icon name="earth-outline"></ion-icon>
+                <ion-label class="ion-margin-start">Country</ion-label>
+              </mat-expansion-panel-header>
+              <mat-panel-description class="ion-no-padding">
+                <ion-list>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox ></ion-checkbox><ion-label style="padding-left:6px">United States</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Canada</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Australia</ion-label>
+                  </ion-row> 
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Europe</ion-label>
+                  </ion-row>
+                </ion-list>
+          
+              </mat-panel-description>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header> 
+                <ion-icon name="business-outline"></ion-icon>
+                <ion-label class="ion-margin-start">Industy</ion-label>
+              </mat-expansion-panel-header>
+              <mat-panel-description class="ion-no-padding">
+                <ion-list>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox ></ion-checkbox><ion-label style="padding-left:6px">IT Service</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Software</ion-label>
+                  </ion-row>
+                  <ion-row class="checkBoxSideMenu">
+                    <ion-checkbox></ion-checkbox><ion-label style="padding-left:6px">Network and Telecom</ion-label>
+                  </ion-row> 
+                </ion-list>
+          
+              </mat-panel-description>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header> 
+                <ion-icon name="business-outline"></ion-icon>
+                <ion-label class="ion-margin-start">Employee Size</ion-label>
+              </mat-expansion-panel-header>
+              <mat-panel-description class="ion-no-padding"> 
+                
+                <ion-row style="width: 100%;" class="ion-no-padding">
+                  <ion-range style="width: 100%;" dualKnobs="true" min="0" max="20"  [(ngModel)]="setEmp"
+                  step="0.5" snaps="true" pin="true" class="ion-no-padding" (ionChange)="setEmployeesRange(setEmp)">
+                    <ion-label  slot="start" >{{this.empMinNew*1000}}</ion-label>
+                    <ion-label slot="end" >{{this.empMaxNew*1000}}</ion-label>
+                  </ion-range>
+                </ion-row>
+
+              </mat-panel-description>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header> 
+                <ion-icon name="business-outline"></ion-icon>
+                <ion-label class="ion-margin-start">Revenue</ion-label>
+              </mat-expansion-panel-header>
+              <mat-panel-description class="ion-no-padding">
+               
+                <ion-range dualKnobs="true" min="0" max="300"
+                 step="10" snaps="true" pin="true" class="ion-no-padding">
+                  <ion-label  slot="start">0</ion-label>
+                  <ion-label slot="end" >300M</ion-label>
+                </ion-range>
+               
+               
+              </mat-panel-description>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+
+          <ion-footer>  
+            <ion-button fill="outline" color="primary" expand="block"  style="--box-shadow:0;" class="ApplyFilter">Apply</ion-button>
+            <ion-button fill="solid" color="dark" expand="block" style="--box-shadow:0" >Cancel</ion-button>
+        </ion-footer> 
+        </ion-content>
+
+
+        
+
+        </ion-col>
+
+        
+
+        <ion-col size="10" class="mainContent">
+
+          <ion-row style="padding:6px">
+            
+           
+            <ion-col size="10" class="ion-no-padding">
+
+              <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex.John,Manger,United States" #input>
+              </mat-form-field>
+
+              <ion-button fill="clear" size="small">
+                <ion-icon name="search-outline"></ion-icon> Search
+              </ion-button>
+
+              <ion-button fill="clear" size="small">
+                <ion-icon name="close-circle-outline"></ion-icon> Clear all
+              </ion-button>
+
+              <ion-button fill="clear" size="small">
+                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Select all
+              </ion-button>
+
+              <ion-button fill="clear" size="small">
+                <ion-icon name="duplicate-outline"></ion-icon> Include
+              </ion-button>
+
+              <ion-button fill="clear" size="small">
+                <ion-icon name="cut-outline"></ion-icon> Exclude
+              </ion-button>
+            </ion-col>
+
+            <!-- <ion-col size="2">
+              <ion-button size="small" style="--box-shadow:0;--background:#1D6F42">
+                <ion-icon name="download-outline"></ion-icon> <ion-label>Export to Excel</ion-label>
+              </ion-button>
+            </ion-col> -->
+
+          </ion-row>
+
+
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+
+
+          
+
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource"  matSort>
+           
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="jobTitle">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Job title </th>
+              <td mat-cell *matCellDef="let element"> {{element.jobTitle}} </td>
+            </ng-container>
+          
+            
+            <ng-container matColumnDef="level">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Level </th>
+              <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+            </ng-container>
+          
+            
+            <ng-container matColumnDef="function">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Function </th>
+              <td mat-cell *matCellDef="let element"> {{element.function}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="company">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+              <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="specialty">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Specialty </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+              <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="employees">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Employees </th>
+              <td mat-cell *matCellDef="let element"> {{element.employees}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="revenue">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Revenue </th>
+              <td mat-cell *matCellDef="let element"> {{element.revenue}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="industry">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Industry </th>
+              <td mat-cell *matCellDef="let element"> {{element.industry}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="subIndustry">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> SubIndustry </th>
+              <td mat-cell *matCellDef="let element"> {{element.subIndustry}} </td>
+            </ng-container>
+           
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+
+          </table>
+           
+          <mat-paginator [pageSizeOptions]="[1, 2, 3]" showFirstLastButtons></mat-paginator> 
+
+        </div>
+        </ion-col>
+     </ion-row>

@@ -1,27 +1,38 @@
-#container {
-  text-align: center;
+.sideMenu{
+  font-size: smaller;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  ion-icon{
+    color:#be1723
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.dataList{
+  padding:10px;
+  // flex-wrap: nowrap;   
+   overflow-x: scroll;
+  // overflow-y: hidden;
+  font-size:smaller;
+  font-weight:500;
+  position: relative;
+
+  ion-col{
+    padding:3px;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+table{
+  width:100%
 }
 
-#container a {
-  text-decoration: none;
+
+.mat-form-field {
+  font-size: 14px;
+  width: 20%;
 }
+
+.checkBoxSideMenu{
+  font-size: small;
+  padding:3px;
+}
+
+
