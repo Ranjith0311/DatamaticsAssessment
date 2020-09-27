@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Exclude Data</h1>
+<form #ExcludeForm="ngForm" (ngSubmit)="submitExcludeForm(ExcludeForm)">
+
+<div mat-dialog-content>
+  <ion-row>
+    <ion-col size="4">
+      <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input name="name" ngModel ></ion-input>
+    </ion-item>
+  </ion-col>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">SubIndustry</ion-label>
+        <ion-input name="industry" ngModel ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">Job Level</ion-label>
+        <ion-input name="jobLevel" ngModel ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">Job Function</ion-label>
+        <ion-input name="jobFunction" ngModel ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">Country</ion-label>
+        <ion-input name="country" ngModel ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">Company</ion-label>
+        <ion-input name="company" ngModel ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</div>
+
+
+<ion-row mat-dialog-actions class="ion-padding">
+  <ion-col class="ion-text-end">
+    <ion-button fill="clear" mat-button (click)="onNoClick()">Cancel</ion-button>
+    <ion-button mat-button [mat-dialog-close]="this.excludeDialogData" type="submit">Exclude</ion-button>
+  </ion-col>
+  
+</ion-row>
+
+</form>
