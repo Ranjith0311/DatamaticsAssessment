@@ -18,7 +18,9 @@ export class HomeDataService {
 
 
   getAllData(dataRequest:DataDemo): Observable<DataDemo[]> {
-    const requestUrl = 'http://localhost:9999/getRequestedData';
+    const url = 'http://datamaticsfinalservice-env.eba-8mvg9mrf.ap-south-1.elasticbeanstalk.com'
+    const local = "http://localhost:9999";
+    const requestUrl = url+'/getRequestedData';
     console.log(dataRequest);
     this.http.post<DataDemo[]>(requestUrl,dataRequest, { observe: 'response' }).subscribe(res => {
       this.dataDemoList = res.body;
@@ -31,7 +33,8 @@ export class HomeDataService {
   }
 
   getAllExcludeData(dataRequest:DialogData): Observable<DataDemo[]> {
-    const requestUrl = 'http://localhost:9999/getRequestedData/exclude';
+    const url = 'http://datamaticsfinalservice-env.eba-8mvg9mrf.ap-south-1.elasticbeanstalk.com'
+    const requestUrl = url+'/getRequestedData/exclude';
     console.log(dataRequest)
     this.http.post<DataDemo[]>(requestUrl, dataRequest, { observe: 'response' }).subscribe(res => {
       this.dataDemoList = res.body;

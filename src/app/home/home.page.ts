@@ -198,9 +198,7 @@ export class HomePage implements AfterViewInit {
     if (this.countrySet.size !== 0) {
       dataObject.ContactCountry = Array.from(this.countrySet).toString();
     }
-    if (this.empChanged == true) {
-      dataObject.Company = (this.empMinNew * 1000) + ',' + (this.empMaxNew * 1000);
-    }
+     dataObject.Company = (this.empMinNew * 1000) + ',' + (this.empMaxNew * 1000);
     if (this.revChanged == true) {
       dataObject.SubIndustryType1 = (this.revMinNew * 1000000) + ',' + (this.revMaxNew * 1000000);
     }
